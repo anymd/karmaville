@@ -1,4 +1,16 @@
 <h1>KarmaVille's Most Famous</h1>
+<div class='pagination'>
+  <%@page = 1 if @page == 0%>
+  <ul>
+    <li><%= link_to 'Prev', root_path(:page => @page-1) %></li>
+    <li><%= link_to @page, root_path(:page => @page) %></li>
+    <li><%= link_to @page+1, root_path(:page => @page+1) %></li>
+    <li><%= link_to @page+2, root_path(:page => @page+2) %></li>
+    <li><%= link_to @page+3, root_path(:page => @page+3) %></li>
+    <li><%= link_to @page+4, root_path(:page => @page+4) %></li>
+    <li><%= link_to 'Next', root_path(:page => @page+1) %></li>
+  </ul>
+</div>
 <table class="table table-bordered table-striped">
   <tr>
     <th>Karma</th>
@@ -10,3 +22,4 @@
     <%= render 'user_row', :user => user %>
   <% end %>
 </table>
+
